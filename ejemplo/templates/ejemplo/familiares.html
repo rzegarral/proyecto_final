@@ -1,11 +1,18 @@
 {% extends 'ejemplo/base.html' %}
-{% block titulo%} Lista de todos mis Familiares {% endblock %}   ### DEFINE CONTENIDO DEL titulo
 
-{% block contenido %}
-  {% for familiar in lista_familiares %}
-      <ul>
-        <!-- DEFINE CONTENIDO DEL CUERPO -->
-          <li> Nombre: {{familiar.nombre}}, Dirección: {{familiar.direccion}}, Pasaporte: {{familiar.numero_pasaporte}}</li>
-      </ul>
-  {% endfor %}
+{% block titulo %}
+<H2>Lista de Familiares</H2>
 {% endblock %}
+{% block contenido %}
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Para ingresar un nuevo Familiar, hacer click&nbsp;&nbsp;&nbsp;<a href="/mi-familia/alta">aqui</a>  </b>
+    <ul>
+    {% for familiar in lista_familiares %}
+        <li> 
+            <b>Id:</b>&nbsp;{{familiar.id}},&nbsp;&nbsp; <b>Nombre:</b>&nbsp; {{familiar.nombre}},&nbsp;&nbsp;<b>Dirección:</b>&nbsp; {{familiar.direccion}},&nbsp;&nbsp; <b>Pasaporte:</b>&nbsp; {{familiar.numero_pasaporte}}
+            <a href='/mi-familia/actualizar/{{ familiar.id }}'>Actualizar</a>
+            <a href='/mi-familia/borrar/{{ familiar.id }}'>Borrar</a>
+        </li>
+    {% endfor %}
+    </ul>
+{%endblock %}

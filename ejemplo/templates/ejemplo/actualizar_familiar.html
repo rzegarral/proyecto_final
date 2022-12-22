@@ -1,0 +1,17 @@
+{% extends 'ejemplo/base.html' %}
+{% block titulo%} <h2>Modificar un Familiar</h2> {% endblock %}
+
+{% block contenido %}
+    <form action="/mi-familia/actualizar/{{ familiar.id }}" method="post"> 
+        {% csrf_token %}
+        {{ form.as_p }}
+        <br>
+        <input type="submit" value="Actualizar">
+ <!--       <input type="submit" value="Regresar">   -->
+    <h2 style="color:green">{{msg_exito}} </h2>
+    </form>
+<!--    <a href="/mi-familia/">Regresar</a>  -->
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Para regresar a Lista de Familiares, hacer click&nbsp;&nbsp;&nbsp;<a href="/mi-familia/">aqui</a>  </b>
+
+    {% endblock %}
+
