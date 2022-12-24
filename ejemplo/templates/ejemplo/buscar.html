@@ -1,6 +1,10 @@
 {% extends 'ejemplo/base.html' %}
-{% block titulo%} Buscar Familiares por nombre {% endblock %}   ### DEFINE CONTENIDO DEL titulo
+{% block titulo%}
+ <h2>Buscar Familiares por nombre</h2>
+{% endblock %}   ### DEFINE CONTENIDO DEL titulo
+
 {% block contenido %}
+<br>
   <!-- DEFINE EL FORMULARIO --> 
   <form action="/mi-familia/buscar" method="post">
     {% csrf_token %}
@@ -10,7 +14,11 @@
                                <!-- REALIZA LA ITERACION DE LOS DATOS --> 
   {% for familiar in lista_familiares %}
       <ul>
+        <h4 style="color:green">
           <li> Nombre: {{familiar.nombre}}, Dirección: {{familiar.direccion}}, Pasaporte: {{familiar.numero_pasaporte}}</li>
+        </h4>
       </ul>
   {% endfor %}
+  <br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Para regresar a Lista de Familiares, hacer click&nbsp;&nbsp;&nbsp;<a href="/mi-familia/">aqui</a>  </b>
 {% endblock %}

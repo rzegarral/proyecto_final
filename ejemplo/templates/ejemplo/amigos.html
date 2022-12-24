@@ -1,21 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+{% extends 'ejemplo/base.html' %}
 
-    <h1>Lista de mis Amigos</h1>
-
-    {% for amigo in lista_amigos %}
-        <ul>
-            <li> Id: {{amigo.id}},-,Nombre: {{amigo.nombre}}, Dirección: {{amigo.direccion}}, Edad: {{amigo.edad}}, Pais: {{amigo.pais}} </li>
-        </ul>  
-
+{% block titulo %}
+<H2>Lista de Amigos</H2>
+{% endblock %}
+{% block contenido %}
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Para ingresar un nuevo Amigo, hacer click&nbsp;&nbsp;&nbsp;<a href="/mis-amigos/alta">aqui</a>  </b>
+    <ul>
+        {% for amigo in lista_amigos %}   <!--  actualizado -->
+        <li> 
+            <b>Id:</b>&nbsp;{{amigo.id}},&nbsp;&nbsp;<b>Nombre:</b>&nbsp;{{amigo.nombre}},&nbsp;&nbsp;<b>Dirección:</b>&nbsp; {{amigo.direccion}},&nbsp;&nbsp;<b>Edad:</b>&nbsp; {{amigo.edad}},&nbsp;&nbsp;<b> Pais:</b>&nbsp;{{amigo.pais}}
+            <a href='/mis-amigos/actualizar/{{ amigo.id }}'>Actualizar</a>
+            <a href='/mis-amigos/borrar/{{ amigo.id }}'>Borrar</a>
+        </li>
     {% endfor %}
-    
-</body>
-</html>
+    </ul>
+{%endblock %}

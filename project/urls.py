@@ -29,9 +29,7 @@ urlpatterns = [
 
 from django.contrib import admin
 from django.urls import path
-from ejemplo.views import (index, monstrar_familiares, BuscarFamiliar,
-                           AltaFamiliar, ActualizarFamiliar,  
-                           BorrarFamiliar, monstrar_amigos,BuscarAmigos)
+from ejemplo.views import (index, monstrar_familiares, BuscarFamiliar, AltaFamiliar, ActualizarFamiliar, BorrarFamiliar)
 
 #from blog.views import index as blog_index
 
@@ -48,6 +46,6 @@ urlpatterns = [
     path('mi-familia/actualizar/<int:pk>', ActualizarFamiliar.as_view()), # NUEVA RUTA PARA BUSCAR FAMILIAR
     path('mi-familia/borrar/<int:pk>', BorrarFamiliar.as_view()), # NUEVA RUTA PARA BUSCAR FAMILIAR
 # ruta para Amigos
-    path('mis-amigos/', monstrar_amigos),
-    path('mis-amigos/buscar_amigos', BuscarAmigos.as_view()), # NUEVA RUTA PARA BUSCAR AMIGOS
+#    path('mis-amigos/', monstrar_amigos),
+#    path('mis-amigos/actualizar/<int:pk>', Amigosactualizar.as_view()), # NUEVA RUTA PARA BUSCAR AMIGOS
   ]
