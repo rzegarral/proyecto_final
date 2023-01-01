@@ -195,7 +195,7 @@ def monstrar_autos(request):
 class BuscarAutos(View):
   form_class = Buscar
   template_name = 'ejemplo/buscar_auto.html'
-  initial = {"marca":""}
+  initial = {"nombre":""}
 
   def get(self, request):
     form = self.form_class(initial=self.initial)
@@ -203,8 +203,8 @@ class BuscarAutos(View):
   def post(self, request):
     form = self.form_class(request.POST)
     if form.is_valid():
-      marca = form.cleaned_data.get("marca")
-      lista_autos = Carros.objects.filter(marca__icontains=marca).all() 
+      nombre = form.cleaned_data.get("nombre")
+      lista_autos = Carros.objects.filter(marca__icontains=nombre).all() 
       form = self.form_class(initial=self.initial)
       return render(request, self.template_name, {'form':form, 
                                 'lista_autos':lista_autos})
