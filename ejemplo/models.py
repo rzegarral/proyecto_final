@@ -1,7 +1,7 @@
 from django.db import models
 
 class Familiar(models.Model):
-    nombre = models.CharField(max_length=100)
+    nombre    = models.CharField(max_length=100)
     direccion = models.CharField(max_length=200)
     numero_pasaporte = models.IntegerField()
 
@@ -11,12 +11,12 @@ class Familiar(models.Model):
 ###  ----  Agregado por mi ---
 class Amigos(models.Model):
     nombre    = models.CharField(max_length=100)
-
-    pais      = models.CharField(max_length=20)
+    direccion = models.CharField(max_length=200)
     edad      = models.IntegerField()
-
+    pais      = models.CharField(max_length=20)
+    
     def __str__(self):
-      return f"{self.id}, {self.nombre}, {self.direccion}, {self.pais}, {self.edad}"
+      return f"{self.id}, {self.nombre}, {self.direccion}, {self.edad}, {self.pais}"
 
 class Carros(models.Model):
     marca     = models.CharField(max_length=100)

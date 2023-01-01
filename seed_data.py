@@ -1,4 +1,4 @@
-"""
+
 from ejemplo.models import Familiar
 Familiar(nombre="Rosario", direccion="Rio Parana 745",numero_pasaporte=123123).save()
 Familiar(nombre="Alberto", direccion="Av. Central 125",numero_pasaporte=892126).save()
@@ -21,7 +21,7 @@ Amigos(nombre="Paola", direccion="Rio Parana 745",edad=25, pais="Bolivia").save(
 Amigos(nombre="Walter", direccion="Calle 2 de Junio 125",edad=38, pais="Venezuela").save()
 print("Se cargo con éxito los Amigos de prueba")
 
-"""
+
 from ejemplo.models import Carros
 Carros(marca="Nissan", origen="Japón",ano=2018, valor=15000).save()
 Carros(marca="Fiat", origen="Italia",ano=2020, valor=20000).save()

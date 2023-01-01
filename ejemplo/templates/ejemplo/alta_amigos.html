@@ -1,0 +1,15 @@
+{% extends 'ejemplo/base.html' %}     # Hereda de base.html
+
+{% block titulo%} <h2>Alta de nuevo Amigo</h2> {% endblock %}
+{% block contenido %}
+  
+  <form action="/mis-amigos/alta" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <br>
+    <input type="submit" value="Submit">
+  </form>
+
+  <h2 style="color:green">{{msg_exito}}</h2>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Para regresar a Lista de Amigos, hacer click&nbsp;&nbsp;&nbsp;<a href="/mis-amigos/">aqui</a>  </b>
+{% endblock %}

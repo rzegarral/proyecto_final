@@ -7,11 +7,11 @@
 <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Para ingresar un nuevo Amigo, hacer click&nbsp;&nbsp;&nbsp;<a href="/mis-amigos/alta">aqui</a>  </b>
     <ul>
-        {% for amigo in lista_amigos %}   <!--  actualizado -->
+    {% for amigo in lista_amigos %}   <!--  actualizado -->
         <li> 
             <b>Id:</b>&nbsp;{{amigo.id}},&nbsp;&nbsp;<b>Nombre:</b>&nbsp;{{amigo.nombre}},&nbsp;&nbsp;<b>Dirección:</b>&nbsp; {{amigo.direccion}},&nbsp;&nbsp;<b>Edad:</b>&nbsp; {{amigo.edad}},&nbsp;&nbsp;<b> Pais:</b>&nbsp;{{amigo.pais}}
             <a href='/mis-amigos/actualizar/{{ amigo.id }}'>Actualizar</a>
-            <a href='/mis-amigos/borrar/{{ amigo.id }}'>Borrar</a>
+            <a href='/mis-amigos/borrar-amigos/{{ amigo.id }}'>Borrar</a>
         </li>
     {% endfor %}
     </ul>

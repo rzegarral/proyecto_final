@@ -1,0 +1,18 @@
+{% extends 'ejemplo/base.html' %}
+
+{% block titulo %}
+<H2>Lista de Autos</H2>
+{% endblock %}
+{% block contenido %}
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Para ingresar un nuevo Auto, hacer click&nbsp;&nbsp;&nbsp;<a href="/mis-autos/alta">aqui</a>  </b>
+    <ul>
+    {% for auto in lista_autos %}   <!--  actualizado -->
+        <li> 
+            <b>Id:</b>&nbsp;{{auto.id}},&nbsp;&nbsp;<b>Marca:</b>&nbsp;{{auto.marca}},&nbsp;&nbsp;<b>Origen:</b>&nbsp; {{auto.origen}},&nbsp;&nbsp;<b>Ano:</b>&nbsp; {{auto.ano}},&nbsp;&nbsp;<b> Valor:</b>&nbsp;{{auto.valor}}
+            <a href='/mis-autos/actualizar/{{ auto.id }}'>Actualizar</a>
+            <a href='/mis-autos/borrar-auto/{{ auto.id }}'>Borrar</a>
+        </li>
+    {% endfor %}
+    </ul>
+{%endblock %}

@@ -2,7 +2,7 @@
 {% block titulo%} <h2>Modificar un Amigo</h2> {% endblock %}
 
 {% block contenido %}
-    <form action="/mis-amigos/actualizar/{{ amigo.id }}" method="post"> 
+    <form action="/mis-amigos/actualizar/{{ amigos.id }}" method="post"> 
         {% csrf_token %}
         {{ form.as_p }}
         <br>

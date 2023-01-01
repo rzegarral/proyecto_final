@@ -1,25 +1,24 @@
-<!DOCTYPE html>
-  <html lang="en">
-  <head>
-      <meta charset="UTF-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Document</title>
-  </head>manage
-  <body>
-      <h1>Buscar Amigos por Nombre</h1>
-    
-      <form action="/mis-amigos/buscar_amigos" method="post">
-	        {% csrf_token %}
-	        {{ form }}
-	        <input type="submit" value="Enviar">
-      </form>
-	
-      {% for amigo in lista_amigos %}
+{% extends 'ejemplo/base.html' %}
+{% block titulo%}
+ <h2>Buscar Amigos por Nombre</h2>
+{% endblock %}   ### DEFINE CONTENIDO DEL titulo
+
+{% block contenido %}
+<br>
+  <!-- DEFINE EL FORMULARIO --> 
+  <form action="/mis-amigos/buscar_amigos" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Submit">
+  </form>
+                               <!-- REALIZA LA ITERACION DE LOS DATOS --> 
+  {% for amigo in lista_amigos %}
       <ul>
-              <li> Id: {{amigo.id}},-,Nombre: {{amigo.nombre}}, Dirección: {{amigo.direccion}}, Edad: {{amigo.edad}}, Pais: {{amigo.pais}} </li>
+        <h4 style="color:green">
+          <li> Id: {{amigo.id}}, Nombre: {{amigo.nombre}}, Dirección: {{amigo.direccion}}, Edad: {{amigo.edad}}, Pais: {{amigo.pais}}</li>
+        </h4>
       </ul>
-      {% endfor %}
-	
-  </body>
-  </html>
+  {% endfor %}
+  <br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Para regresar a Lista de Familiares, hacer click&nbsp;&nbsp;&nbsp;<a href="/mis-amigos/">aqui</a>  </b>
+{% endblock %}
