@@ -1,0 +1,10 @@
+{% extends 'blog_ricardo/base.html' %}
+{% block contenido %}
+<h5>Contacto: deje aquí su mensaje: </h5>
+<br>
+<form method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" value="Enviar">
+</form>
+{% endblock %}

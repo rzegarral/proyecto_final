@@ -1,0 +1,14 @@
+{% extends 'blog_ricardo/base.html' %}
+
+{% block contenido %}
+<h5>Lista de mensajes: </h5>
+<br>
+<ul>
+{% for mensaje in object_list %}
+    <li>
+        {{mensaje.enviado_el}} - - {{mensaje.email}} -- {{mensaje.nombre}} 
+        <a href="{% url 'blog-ricardo-mensajes-detalle' mensaje.id %}">Ver</a>
+    </li>
+{% endfor %}
+</ul>
+{% endblock %}

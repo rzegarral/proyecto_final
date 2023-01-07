@@ -1,0 +1,8 @@
+{% extends 'blog_ricardo/base.html' %}
+{% block contenido %}
+<form enctype="multipart/form-data" method="POST">  <!-- COLOCA FOTO ISQ. ARRIBA -->
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" value="Actualizar">
+</form>
+{% endblock %}

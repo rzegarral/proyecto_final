@@ -1,0 +1,15 @@
+{% extends 'blog_ricardo/base.html' %}
+
+{% block contenido %}
+    <h5>Detalle del Mensaje </h5>
+    <h6>Enviado por: {{mensaje.nombre}} desde : {{mensaje.email}}</h6>
+    <div>
+        <h6>Mensaje : </h6>
+        {{object.texto}}
+    </div>
+    <div>
+        <h6>Enviado el : </h6>
+        {{mensaje.enviado_el}}
+    </div>
+    
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'blog_ricardo/base.html' %}
+
+{% block contenido %}
+{% if user.is_authenticated %}
+    <h5>Administrar Blog</h5>
+    <a href="{% url 'blog-ricardo-crear' %}">Crear Post</a>
+    {% if user.avatar.imagen %}
+        <a href="{% url 'blog-ricardo-avatars-actualizar' user.avatar.id %}">Actualizar Avatar</a>
+    {% endif %}
+    <a href="{% url 'blog-ricardo-users-actualizar' user.id %}">Actualizar Profile</a>
+    <a href="{% url 'blog-ricardo-mensajes-listar' %}">Mensajes</a>
+{% endif %}
+<ul>
+{% for post in object_list %}
+    <li>
+        {{post.publicado_el}} - - {{post.titulo}} 
+        {% if user.is_superuser %}
+            <a href="{% url 'blog-ricardo-borrar' post.id %}">Borrar</a>
+            <a href="{% url 'blog-ricardo-actualizar' post.id %}">Actualizar</a>
+        {% endif %}
+        <a href="{% url 'blog-ricardo-detalle' post.id %}">Ver</a>
+    </li>
+{% endfor %}
+</ul>
+{% endblock %}
