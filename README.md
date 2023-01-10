@@ -1,6 +1,8 @@
 # Proyecto_Final
 Proyecto Final de Ricardo Zegarra L.
 
+Video en YouTube: https://www.youtube.com/watch?v=Z9TPQCPmifM
+
 Este proyecto fué realizado como parte del curso de Python en CoderHouse
 
 ## 🚀 Comenzando
